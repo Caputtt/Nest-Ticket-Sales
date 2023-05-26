@@ -6,15 +6,10 @@ export type UserDocument = HydratedDocument<User>;
 
 @Schema()
 export class User implements IUser {
-
     @Prop() psw: string;
-
     @Prop() cardNumber: string;
-
     @Prop() login: string;
-
     @Prop() email: string;
-
     @Prop() id: string;
 }
 

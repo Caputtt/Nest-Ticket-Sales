@@ -1,11 +1,11 @@
 import {HttpException, HttpStatus, Injectable} from '@nestjs/common';
-import {UsersService} from "../users/users.service";
+import {UsersService} from "../../users/users.service";
 import {PassportStrategy} from "@nestjs/passport";
 import {Strategy} from 'passport-local';
 
 
 @Injectable()
-export class AuthService extends PassportStrategy(Strategy){
+export class AuthService extends PassportStrategy(Strategy) {
     constructor(private usersService: UsersService) {
 
         super({usernameField: 'login', passwordField: 'psw' });

@@ -16,6 +16,7 @@ import {User} from "../../shemas/user";
 import {UserDto} from "../../dto/user-dto";
 import RejectedValue = jest.RejectedValue;
 import {AuthGuard} from "@nestjs/passport";
+import { JwtAuthGuard } from 'src/services/authentication/jwt-auth.guard/jwt-auth.guard.service';
 
 @Controller('users')
 export class UsersController {
@@ -37,6 +38,7 @@ export class UsersController {
         return this.userService.getUserById(id);
     }
 
+    // @UseGuards(JwtAuthGuard)
     @Post()
     sendUser(@Body() data: UserDto): Promise<User> {
 
