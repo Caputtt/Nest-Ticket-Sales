@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
-import {ITour} from "../interfaces/Tour";
+import { ITour } from '../interfaces/Tour';
 
 export type TourDocument = HydratedDocument<Tour>;
 
@@ -10,17 +10,17 @@ export class Tour implements ITour {
 
     @Prop() description: string;
 
-    @Prop() tourOperator: string
+    @Prop() tourOperator: string;
 
-    @Prop() price: string
+    @Prop() price: string;
+
+    @Prop() type: string;
+
+    @Prop() date: string;
 
     @Prop() img: string;
 
-    @Prop() id: string;
-
-    @Prop() type: string
-
-    @Prop() date: string
+    // @Prop() _id: string;
 }
 
 export const TourSchema = SchemaFactory.createForClass(Tour);

@@ -63,21 +63,6 @@ export class UsersController {
         return this.userService.login(data);
     }
 
-    //     Promise<User | boolean> {
-    //     return this.userService.checkAuthUser(data.login, data.psw).then((queryRes) => {
-    //             if (queryRes.length !== 0) {
-    //                 return Promise.resolve(true);
-    //             } else {
-    //                 console.log('err - user is exists')
-    //                 throw new HttpException({
-    //                     status: HttpStatus.CONFLICT,
-    //                     errorText: 'Пользователь не найден в базе данных',
-    //                 }, HttpStatus.CONFLICT);
-    //             }
-    //         }
-    //     );
-    // }
-
     @Put(":id")
     updateUsers(@Param('id') id, @Body() data): Promise<User> {
         return this.userService.updateUsers(id, data);

@@ -4,7 +4,16 @@ export interface ITour {
     tourOperator:string,
     price:string,
     img:string,
-    id:string,
+    _id?:string,
     type: string,
     date: string
+}
+export interface ITourClient {
+    name: string;
+    description: string;
+    tourOperator: string;
+    price: string;
+    type: string;
+    date: string;
+    img: string;
 }
